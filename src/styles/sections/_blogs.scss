@@ -1,0 +1,26 @@
+#blogs {
+    .blogContainer {
+        margin-top: 5vh;
+        display: flex;
+        flex-wrap: nowrap;
+        
+        .blogContent {
+            margin-left: 5%;
+            width: 75%;
+        }
+
+        .blogIndex {
+            padding: 10px 0 10px 5px;
+            margin-top: 2vh;
+            max-width: 120px;
+            width: 25%;
+            background-color: rgba(128, 128, 128, 0.349);
+        }
+    }
+
+    ul {
+        li {
+            list-style-type: none;
+        }
+    }
+}

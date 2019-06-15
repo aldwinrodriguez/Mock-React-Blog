@@ -1,0 +1,9 @@
+div#nav {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+        display: inline;
+        margin-right: 20px;
+    }
+}

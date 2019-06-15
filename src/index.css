@@ -1,13 +1,64 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+a {
+  text-decoration: none;
+  color: #494949;
 }
+
+div#App {
+  padding: 6vh 6vw 0 8vw;
+}
+
+div#nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div#nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+
+#blogs .blogContainer {
+  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#blogs .blogContainer .blogContent {
+  margin-left: 5%;
+  width: 75%;
+}
+
+#blogs .blogContainer .blogIndex {
+  padding: 10px 0 10px 5px;
+  margin-top: 2vh;
+  max-width: 120px;
+  width: 25%;
+  background-color: rgba(128, 128, 128, 0.349);
+}
+
+#blogs ul li {
+  list-style-type: none;
+}
+/*# sourceMappingURL=index.css.map */
