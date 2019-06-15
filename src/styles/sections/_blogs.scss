@@ -11,7 +11,6 @@
 
         .blogIndex {
             padding: 10px 0 10px 5px;
-            margin-top: 2vh;
             max-width: 120px;
             width: 25%;
             background-color: rgba(128, 128, 128, 0.349);
@@ -20,7 +19,13 @@
 
     ul {
         li {
+            margin: 5px 0;
             list-style-type: none;
+            a{
+                &:hover {
+                    color: rgb(56, 46, 7);
+                }
+            }
         }
     }
 }

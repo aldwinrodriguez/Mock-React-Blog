@@ -52,13 +52,17 @@ div#nav li {
 
 #blogs .blogContainer .blogIndex {
   padding: 10px 0 10px 5px;
-  margin-top: 2vh;
   max-width: 120px;
   width: 25%;
   background-color: rgba(128, 128, 128, 0.349);
 }
 
 #blogs ul li {
+  margin: 5px 0;
   list-style-type: none;
+}
+
+#blogs ul li a:hover {
+  color: #382e07;
 }
 /*# sourceMappingURL=index.css.map */

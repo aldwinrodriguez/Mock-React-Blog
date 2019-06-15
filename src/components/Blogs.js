@@ -4,6 +4,7 @@ import firstBlog from './Blogs/firstBlog';
 import secondBlog from './Blogs/secondBlog';
 import thirdBlog from './Blogs/thirdBlog';
 import fourthBlog from './Blogs/fourthBlog';
+import welcomeBlog from './Blogs/welcomeBlog';
 
 function Blogs() {
     return (
@@ -33,6 +34,7 @@ function Blogs() {
                         </li>
                     </ul>
                     <div className='blogContent'>
+                        <Route exact path='/blogs/' component={welcomeBlog} />
                         <Route path='/blogs/firstBlog' component={firstBlog} />
                         <Route path='/blogs/secondBlog' component={secondBlog} />
                         <Route path='/blogs/thirdBlog' component={thirdBlog} />
