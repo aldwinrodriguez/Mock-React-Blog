@@ -11,7 +11,7 @@ a {
 }
 
 div#App {
-  padding: 6vh 6vw 0 8vw;
+  padding: 6vh 6vw 6vh 8vw;
 }
 
 div#nav {
@@ -29,11 +29,16 @@ div#nav li {
 }
 
 #home {
+  text-align: center;
+  padding: 10px 40px;
+  font-size: 100px;
+  background-color: #000;
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 #blogs .blogContainer {
@@ -64,5 +69,50 @@ div#nav li {
 
 #blogs ul li a:hover {
   color: #382e07;
+}
+
+#gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+#gallery h1 {
+  padding-top: 10px;
+}
+
+#gallery .imgGalleryContainer {
+  position: relative;
+  z-index: 5;
+  margin-top: 4vh;
+}
+
+#gallery .imgGalleryContainer:hover div {
+  -webkit-transition: height .2s ease;
+  transition: height .2s ease;
+  height: 25%;
+  padding: 20px 5px 0;
+}
+
+#gallery .imgGalleryContainer div {
+  text-align: center;
+  padding: 0;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+}
+
+#gallery .imgGalleryContainer div span {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -34,9 +34,7 @@ function App() {
                       </Link>
                     </li>
                     <li>
-                      <Link to='/connect'>
-                        Connect
-                      </Link>
+                      <a href='mailto:niwdla0405@gmail.com'>Connect</a>
                     </li>
                 </ul>
             </div>
@@ -45,7 +43,7 @@ function App() {
           <Route exact path='/' component={Home}/>
           <Route exact path='/blogs' component={Blogs}/>
           <Route exact path='/gallery' component={Gallery}/>
-          <Route exact path='/connect' component={Connect}/>
+          {/* <Route exact path='/connect' component={Connect}/> */}
         </div>
       </Router>
     </div>

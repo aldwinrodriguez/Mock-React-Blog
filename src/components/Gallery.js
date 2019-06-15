@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import GalleryPic from './GalleryPic';
 
 class Gallery extends Component {
     constructor(){
@@ -25,13 +26,20 @@ class Gallery extends Component {
     }
     
     render(){
-        let srcPic = this.state.pics;
+        let GalleryPicComponents = this.state.pics.map( element => {
+            return (
+                <GalleryPic pics={element}  key={element}/>
+            )
+        })
         return (
             <div>
-            <img src={srcPic[2]} width='300' height='300' />
-            <img src={srcPic[5]} width='300' height='300' />
-            <img src={srcPic[5]} width='300' height='300' />
-            </div> 
+                <h1 style={{paddingTop: '50px', textAlign: 'center'}}>
+                    Try hovering on a pic
+                </h1>
+                <div id='gallery'>
+                    {GalleryPicComponents}
+                </div> 
+            </div>
         )
     }
 }
