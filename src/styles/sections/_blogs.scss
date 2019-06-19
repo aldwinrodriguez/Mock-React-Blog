@@ -3,17 +3,18 @@
         margin-top: 5vh;
         display: flex;
         flex-wrap: nowrap;
-        
+
         .blogContent {
             margin-left: 5%;
             width: 75%;
         }
 
         .blogIndex {
-            padding: 10px 0 10px 5px;
+            padding: 10px 0 10px 0px;
             max-width: 120px;
             width: 25%;
             background-color: rgba(128, 128, 128, 0.349);
+            border-radius: 5px;
         }
 
         .contentButtons {
@@ -21,13 +22,17 @@
 
             .buttons {
                 display: inline;
-                padding: 2px 25px;
-                background-color: salmon;
+                padding: 5px 25px;
                 margin-right: 5px;
                 border-radius: 5px;
+                background-color: rgb(210, 210, 210);
+                user-select: none;
+                transition: background-color .5s ease;
 
                 &:hover {
                     cursor: pointer;
+                    transition: background-color .5s ease;
+                    background-color: salmon;
                 }
             }
         }
@@ -35,11 +40,17 @@
 
     ul {
         li {
-            margin: 5px 0;
+            padding: 2px 5px 0;
             list-style-type: none;
-            a{
-                &:hover {
-                    color: rgb(56, 46, 7);
+            transition: background-color .2s ease;
+
+            &:hover {
+                transition: background-color .2s ease;
+                background-color: rgb(70, 70, 70);
+
+                a {
+                    transition: color .5s ease;
+                    color: white;
                 }
             }
         }

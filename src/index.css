@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 a {
   text-decoration: none;
   color: #494949;
@@ -29,16 +34,30 @@ div#nav li {
 }
 
 #home {
-  text-align: center;
-  padding: 10px 40px;
-  font-size: 100px;
-  background-color: #000;
-  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+#home .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+#home .main {
+  text-align: center;
+  padding: 10px 40px;
+  font-size: 100px;
+  background-color: #000;
+  color: white;
 }
 
 #blogs .blogContainer {
@@ -56,10 +75,11 @@ div#nav li {
 }
 
 #blogs .blogContainer .blogIndex {
-  padding: 10px 0 10px 5px;
+  padding: 10px 0 10px 0px;
   max-width: 120px;
   width: 25%;
   background-color: rgba(128, 128, 128, 0.349);
+  border-radius: 5px;
 }
 
 #blogs .blogContainer .contentButtons {
@@ -68,23 +88,42 @@ div#nav li {
 
 #blogs .blogContainer .contentButtons .buttons {
   display: inline;
-  padding: 2px 25px;
-  background-color: salmon;
+  padding: 5px 25px;
   margin-right: 5px;
   border-radius: 5px;
+  background-color: #d2d2d2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
 }
 
 #blogs .blogContainer .contentButtons .buttons:hover {
   cursor: pointer;
+  -webkit-transition: background-color .5s ease;
+  transition: background-color .5s ease;
+  background-color: salmon;
 }
 
 #blogs ul li {
-  margin: 5px 0;
+  padding: 2px 5px 0;
   list-style-type: none;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
 }
 
-#blogs ul li a:hover {
-  color: #382e07;
+#blogs ul li:hover {
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+  background-color: #464646;
+}
+
+#blogs ul li:hover a {
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+  color: white;
 }
 
 #gallery {

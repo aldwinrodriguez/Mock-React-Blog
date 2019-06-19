@@ -35,7 +35,7 @@ function Blogs(props) {
                         </li>
                     </ul>
                     <div className='blogContent'>
-                        <Route exact path='/blogs/' component={WelcomeBlog} />
+                        <Route exact path='/blogs/' render={() => <FirstBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
                         <Route path='/blogs/firstBlog' render={() => <FirstBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
                         <Route path='/blogs/secondBlog' render={() => <SecondBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
                         <Route path='/blogs/thirdBlog' render={() => <ThirdBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />

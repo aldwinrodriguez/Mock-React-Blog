@@ -12,12 +12,12 @@ function secondBlog(props) {
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <div className='contentButtons'>
-                <button onClick={props.addClaps}>
+                <div className='buttons' onClick={props.addClaps}>
                     <span role='img' aria-label=''>👏</span>
-                </button>
-                <button onClick={props.decreaseClaps}>
+                </div>
+                <div className='buttons' onClick={props.decreaseClaps}>
                     <span role='img' aria-label=''>👎</span>
-                </button>
+                </div>
             </div>
         </div>
     )

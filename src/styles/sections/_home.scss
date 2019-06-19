@@ -1,11 +1,22 @@
 #home {
-    text-align: center;
-    padding: 10px 40px;
-    font-size: 100px;
-    background-color: #000;
-    color: white;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .main {
+        text-align: center;
+        padding: 10px 40px;
+        font-size: 100px;
+        background-color: #000;
+        color: white;
+
+    }
 }
