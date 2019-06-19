@@ -7,7 +7,7 @@ import FourthBlog from './Blogs/fourthBlog';
 import WelcomeBlog from './Blogs/welcomeBlog';
 
 function Blogs(props) {
-    const {claps, addClaps} = props;
+    const {claps, addClaps, decreaseClaps} = props;
     return (
         <div id='blogs'>
             <Router>
@@ -35,12 +35,11 @@ function Blogs(props) {
                         </li>
                     </ul>
                     <div className='blogContent'>
-    {/* TODO figure out how to add decreaseClap */}
-                        <Route exact path='/blogs/' render={() => <WelcomeBlog addClaps={addClaps} />} />
-                        <Route path='/blogs/firstBlog' render={() => <FirstBlog addClaps={addClaps} /> } />
-                        <Route path='/blogs/secondBlog' render={() => <SecondBlog addClaps={addClaps} /> } />
-                        <Route path='/blogs/thirdBlog' render={() => <ThirdBlog addClaps={addClaps} /> } />
-                        <Route path='/blogs/fourthBlog' render={() => <FourthBlog addClaps={addClaps} /> } />
+                        <Route exact path='/blogs/' component={WelcomeBlog} />
+                        <Route path='/blogs/firstBlog' render={() => <FirstBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
+                        <Route path='/blogs/secondBlog' render={() => <SecondBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
+                        <Route path='/blogs/thirdBlog' render={() => <ThirdBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
+                        <Route path='/blogs/fourthBlog' render={() => <FourthBlog addClaps={addClaps} decreaseClaps={decreaseClaps} /> } />
                     </div>
                 </div>
             </Router>

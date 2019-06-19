@@ -8,14 +8,12 @@ import { combineReducers, createStore} from 'redux';
 
 import heartReducer from './reducers/heartReducer';
 import clapReducer from './reducers/clapReducer';
-import decreaseclapReducer from './reducers/decreaseClapReducer';
 
 import { Provider } from 'react-redux';
 
 const allReducers = combineReducers({
     hearts: heartReducer,
     claps: clapReducer,
-    // TODO figure out how to add decreaseClap
 })
 
 const store = createStore(

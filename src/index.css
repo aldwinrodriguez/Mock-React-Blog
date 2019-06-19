@@ -62,6 +62,22 @@ div#nav li {
   background-color: rgba(128, 128, 128, 0.349);
 }
 
+#blogs .blogContainer .contentButtons {
+  margin-top: 20px;
+}
+
+#blogs .blogContainer .contentButtons .buttons {
+  display: inline;
+  padding: 2px 25px;
+  background-color: salmon;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+#blogs .blogContainer .contentButtons .buttons:hover {
+  cursor: pointer;
+}
+
 #blogs ul li {
   margin: 5px 0;
   list-style-type: none;

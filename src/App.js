@@ -6,60 +6,74 @@ import Gallery from './components/Gallery';
 
 import { connect } from 'react-redux';
 
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        pics : []
+    }
+  }
 
-function App(props) {
-  console.log('thi', props)
-  return (
-    <div id="App">
-      <div>
-        total hearts = {props.hearts}
-      </div>
-      <div>
-        total claps = {props.claps}
-      </div>
-      <div onClick={props.decreaseClaps}>
-        click
-      </div>
+componentDidMount(){
+    fetch('https://picsum.photos/v2/list?limit=20')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            let newData = data.map( picData =>
+                {
+                    return picData.download_url + '?grayscale';
+                })
+            this.setState({
+                pics: newData
+            })
+        });
+  }
 
-      <Router>
-        <div id='nav'>
-            <div>
-              <Link to='/'>
-                MyMockBlog
-              </Link>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                      <Link to='/'>
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/blogs'>
-                        Blogs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to='/gallery'>
-                        Gallery
-                      </Link>
-                    </li>
-                    <li>
-                      <a href='mailto:niwdla0405@gmail.com'>Connect</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/blogs' render={() => <Blogs claps={props.claps} addClaps={props.addClaps} />}/>
-          <Route exact path='/gallery' render={() => <Gallery hearts={props.hearts} addHearts={props.addHearts} />}/>
-        </div>
-      </Router>
-    </div>
-  );
+  render(){
+    return (
+      <div id="App">
+        <Router>
+          <div id='nav'>
+              <div>
+                <Link to='/'>
+                  MyMockBlog
+                </Link>
+              </div>
+              <div>
+                  <ul>
+                      <li>
+                        <Link to='/'>
+                          Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/blogs'>
+                          Blogs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/gallery'>
+                          Gallery
+                        </Link>
+                      </li>
+                      <li>
+                        <a href='mailto:niwdla0405@gmail.com'>Connect</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div>
+            <Route exact path='/' component={Home}/>
+            <Route exact path='/blogs' render={() => <Blogs claps={this.props.claps} addClaps={this.props.addClaps} decreaseClaps={this.props.decreaseClaps} />}/>
+            <Route exact path='/gallery' render={() => <Gallery hearts={this.props.hearts} addHearts={this.props.addHearts} pics={this.state.pics}/>}/>
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
+
 
 const mapToStateProps = state => {
   return state;

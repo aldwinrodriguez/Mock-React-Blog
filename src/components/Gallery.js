@@ -2,37 +2,11 @@ import React, {Component} from 'react';
 import GalleryPic from './GalleryPic';
 
 class Gallery extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            pics : []
-        }
-    }
-
-
-
-    componentDidMount(){
-        fetch('https://picsum.photos/v2/list?limit=20')
-            .then(res => {
-                return res.json();
-            })
-            .then(data => {
-                let newData = data.map( picData =>
-                    {
-                        return picData.download_url + '?grayscale';
-                    })
-                this.setState({
-                    pics: newData
-                })
-            })
-    }
-    
     render(){
         const { hearts, addHearts} = this.props;
-        console.log('thiss', this.props)
-        let GalleryPicComponents = this.state.pics.map( element => {
+        let GalleryPicComponents = this.props.pics.map( (element, i) => {
             return (
-                <GalleryPic pics={element} addHearts={addHearts} key={element}/>
+                <GalleryPic pics={element} addHearts={addHearts} key={i}/>
             )
         })
         return (

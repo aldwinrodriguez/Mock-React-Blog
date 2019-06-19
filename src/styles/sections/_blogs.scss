@@ -15,6 +15,22 @@
             width: 25%;
             background-color: rgba(128, 128, 128, 0.349);
         }
+
+        .contentButtons {
+            margin-top: 20px;
+
+            .buttons {
+                display: inline;
+                padding: 2px 25px;
+                background-color: salmon;
+                margin-right: 5px;
+                border-radius: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
     }
 
     ul {
