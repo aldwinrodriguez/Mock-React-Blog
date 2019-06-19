@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import GalleryPic from './GalleryPic';
 
 class Gallery extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             pics : []
         }
     }
+
+
 
     componentDidMount(){
         fetch('https://picsum.photos/v2/list?limit=20')
@@ -26,16 +28,23 @@ class Gallery extends Component {
     }
     
     render(){
+        const { hearts, addHearts} = this.props;
+        console.log('thiss', this.props)
         let GalleryPicComponents = this.state.pics.map( element => {
             return (
-                <GalleryPic pics={element}  key={element}/>
+                <GalleryPic pics={element} addHearts={addHearts} key={element}/>
             )
         })
         return (
             <div>
-                <h1 style={{paddingTop: '50px', textAlign: 'center'}}>
-                    Try hovering on a pic
-                </h1>
+                <div style={{paddingTop: '50px', textAlign: 'center'}}>
+                    <h1 >
+                        Try hovering on a pic
+                    </h1>
+                    <h5 style={{color: 'gray'}}>
+                        Count of likes : {hearts}
+                    </h5>
+                </div>
                 <div id='gallery'>
                     {GalleryPicComponents}
                 </div> 

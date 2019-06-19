@@ -1,6 +1,6 @@
 import React from 'react'
 
-function firstBlog() {
+function firstBlog(props) {
     return (
         <div>
             <h1>Story heading for FIRST blog</h1>
@@ -11,6 +11,12 @@ function firstBlog() {
             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
+            <button onClick={props.addClaps}>
+                <span role='img' aria-label=''>👏</span>
+            </button>
+            <button>
+                <span role='img' aria-label=''>👎</span>
+            </button>
         </div>
     )
 }

@@ -3,12 +3,24 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Blogs from './components/Blogs';
 import Gallery from './components/Gallery';
-import Connect from './components/Connect';
+
+import { connect } from 'react-redux';
 
 
-function App() {
+function App(props) {
+  console.log('thi', props)
   return (
     <div id="App">
+      <div>
+        total hearts = {props.hearts}
+      </div>
+      <div>
+        total claps = {props.claps}
+      </div>
+      <div onClick={props.decreaseClaps}>
+        click
+      </div>
+
       <Router>
         <div id='nav'>
             <div>
@@ -41,13 +53,36 @@ function App() {
         </div>
         <div>
           <Route exact path='/' component={Home}/>
-          <Route exact path='/blogs' component={Blogs}/>
-          <Route exact path='/gallery' component={Gallery}/>
-          {/* <Route exact path='/connect' component={Connect}/> */}
+          <Route exact path='/blogs' render={() => <Blogs claps={props.claps} addClaps={props.addClaps} />}/>
+          <Route exact path='/gallery' render={() => <Gallery hearts={props.hearts} addHearts={props.addHearts} />}/>
         </div>
       </Router>
     </div>
   );
 }
 
-export default App;
+const mapToStateProps = state => {
+  return state;
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addHearts: () => {
+      dispatch({
+        type: 'addHeart'
+      })
+    },
+    addClaps: () => {
+      dispatch({
+        type: 'addClap'
+      })
+    },
+    decreaseClaps: () => {
+      dispatch({
+        type: 'decreaseClap'
+      })
+    }
+  }
+}
+
+export default connect(mapToStateProps, mapDispatchToProps)(App);

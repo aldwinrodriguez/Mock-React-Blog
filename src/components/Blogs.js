@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import firstBlog from './Blogs/firstBlog';
-import secondBlog from './Blogs/secondBlog';
-import thirdBlog from './Blogs/thirdBlog';
-import fourthBlog from './Blogs/fourthBlog';
-import welcomeBlog from './Blogs/welcomeBlog';
+import FirstBlog from './Blogs/firstBlog';
+import SecondBlog from './Blogs/secondBlog';
+import ThirdBlog from './Blogs/thirdBlog';
+import FourthBlog from './Blogs/fourthBlog';
+import WelcomeBlog from './Blogs/welcomeBlog';
 
-function Blogs() {
+function Blogs(props) {
+    const {claps, addClaps} = props;
     return (
         <div id='blogs'>
             <Router>
@@ -34,14 +35,18 @@ function Blogs() {
                         </li>
                     </ul>
                     <div className='blogContent'>
-                        <Route exact path='/blogs/' component={welcomeBlog} />
-                        <Route path='/blogs/firstBlog' component={firstBlog} />
-                        <Route path='/blogs/secondBlog' component={secondBlog} />
-                        <Route path='/blogs/thirdBlog' component={thirdBlog} />
-                        <Route path='/blogs/fourthBlog' component={fourthBlog} />
+    {/* TODO figure out how to add decreaseClap */}
+                        <Route exact path='/blogs/' render={() => <WelcomeBlog addClaps={addClaps} />} />
+                        <Route path='/blogs/firstBlog' render={() => <FirstBlog addClaps={addClaps} /> } />
+                        <Route path='/blogs/secondBlog' render={() => <SecondBlog addClaps={addClaps} /> } />
+                        <Route path='/blogs/thirdBlog' render={() => <ThirdBlog addClaps={addClaps} /> } />
+                        <Route path='/blogs/fourthBlog' render={() => <FourthBlog addClaps={addClaps} /> } />
                     </div>
                 </div>
             </Router>
+            <div>
+                total claps = {claps}
+            </div>
         </div>
     )
 }
