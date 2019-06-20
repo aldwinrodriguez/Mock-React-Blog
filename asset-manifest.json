@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Mock-React-Blog/static/css/main.3af63a28.chunk.css",
+    "main.js": "/Mock-React-Blog/static/js/main.2911d193.chunk.js",
+    "main.js.map": "/Mock-React-Blog/static/js/main.2911d193.chunk.js.map",
+    "runtime~main.js": "/Mock-React-Blog/static/js/runtime~main.74653f90.js",
+    "runtime~main.js.map": "/Mock-React-Blog/static/js/runtime~main.74653f90.js.map",
+    "static/js/2.19406b62.chunk.js": "/Mock-React-Blog/static/js/2.19406b62.chunk.js",
+    "static/js/2.19406b62.chunk.js.map": "/Mock-React-Blog/static/js/2.19406b62.chunk.js.map",
+    "index.html": "/Mock-React-Blog/index.html",
+    "precache-manifest.95dfeafde35f9ac03f58ed1aa69ec232.js": "/Mock-React-Blog/precache-manifest.95dfeafde35f9ac03f58ed1aa69ec232.js",
+    "service-worker.js": "/Mock-React-Blog/service-worker.js",
+    "static/css/main.3af63a28.chunk.css.map": "/Mock-React-Blog/static/css/main.3af63a28.chunk.css.map"
+  }
+}
