@@ -36,14 +36,14 @@ componentDidMount(){
         <Router>
           <div id='nav'>
               <div>
-                <Link to='/'>
+                <Link to='/Mock-React-Blog'>
                   MyMockBlog
                 </Link>
               </div>
               <div>
                   <ul>
                       <li>
-                        <Link to='/'>
+                        <Link to='/Mock-React-Blog'>
                           Home
                         </Link>
                       </li>
@@ -65,6 +65,7 @@ componentDidMount(){
           </div>
           <div>
             <Route exact path='/' render={() => <Home claps={this.props.claps} hearts={this.props.hearts} />} />
+            <Route exact path='/Mock-React-Blog' render={() => <Home claps={this.props.claps} hearts={this.props.hearts} />} />
             <Route exact path='/blogs' render={() => <Blogs claps={this.props.claps} addClaps={this.props.addClaps} decreaseClaps={this.props.decreaseClaps} />}/>
             <Route exact path='/gallery' render={() => <Gallery hearts={this.props.hearts} addHearts={this.props.addHearts} pics={this.state.pics}/>}/>
           </div>
