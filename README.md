@@ -3,7 +3,7 @@ Mock for my future blog site
 
 ## Summary: Simple React app, to practice my React skills.
 
-# Demo
+# Demo: https://aldwinrodriguez.github.io/Mock-React-Blog/
  
 <img src="screenshots/mock.gif" alt="alt text" width="922" height="484">  
 
